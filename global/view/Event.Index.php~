@@ -4,12 +4,12 @@
 		<title><?php echo $this->title;?></title>
 		<script src="global/ext-3.2.1/adapter/ext/ext-base.js"></script>
 		<script src="global/ext-3.2.1/ext-all.js"></script>
-		<script src="global/view/default.js"></script>
+		<script src="global/view/Event.js"></script>
 		<style>
 			@import url("global/ext-3.2.1/resources/css/ext-all.css");
 			body {
 				margin:0px auto;
-				background:url(images/bg.gif);
+				background:url(/images/bg.gif);
 				font-family:Arial,simsun;
 				font-size:12px;
 				text-align:center;

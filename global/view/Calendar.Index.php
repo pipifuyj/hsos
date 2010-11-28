@@ -9,7 +9,7 @@
 			@import url("global/ext-3.2.1/resources/css/ext-all.css");
 			body {
 				margin:0px auto;
-				background:url(/images/bg.gif);
+				background:url(images/bg.gif);
 				font-family:Arial,simsun;
 				font-size:12px;
 				text-align:center;
