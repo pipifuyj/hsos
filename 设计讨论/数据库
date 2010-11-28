@@ -1,0 +1,84 @@
+1. h-alpha
+path/name  datetime
+
+2.3channel-mag
+path/name datetime
+
+3. full-mag
+path/name datetime
+
+4. 35-local
+path/name datetime
+
+5.hsos-region-number
+id lat lon datetime
+
+6. h-alpha-jpg
+path/name date
+
+7. 3channel-jpg
+path/name date
+
+8. 35-local-jpg
+path/name date
+
+文件和region number通过时间来对应
+
+存放特征：数据集－年－（月）－日－文件
+
+描述粒度：数据集
+表1：数据集元数据表
+数据集ID，望远镜类型，观测文件表名，
+dataset:dataset_id, data_type, table_name, dataset_path
+
+
+
+表2：h_alpha观测文件表（全日面－fits－每天多个）
+文件ID，文件名，文件路径，观测时间
+h_alpha_fit: file_id, file_name, file_path, obsv_start_time,obsv_end_time
+
+表3：3channel-mag观测文件表（局部观测－fits－每天多个）
+文件ID，文件名，文件路径，观测时间
+3channel_mag_fit: file_id, file_name, file_path, obsv_start_time,obsv_end_time
+
+表4：full-mag观测文件表（全日面-fits－每天多个）
+文件ID，文件名，文件路径，观测时间
+full_mag_fit: file_id, file_name, file_path, obsv_start_time,obsv_end_time
+
+表5：35-local观测文件表（局部观测-fits－每天多个）
+文件ID，文件名，文件路径，观测时间
+35_local_fit: file_id, file_name, file_path, obsv_start_time,obsv_end_time
+
+表6：hsos-region-number字典表
+事件ID 事件发生经度 事件发生纬度 事件发生时间 事件类型
+region_number_dic: event_id, lat, long, time, event_type
+
+表7：h-alpha-jpg观测文件表（全日面－jpeg－每天一张）
+文件ID，文件名，文件路径，观测时间
+h_alpha_jpg:file_id, file_name, file_path, obsv_start_time,obsv_end_time
+
+
+表8：3channel-jpg观测文件表（局部－jpeg－每天多张）
+文件ID，文件名，文件路径，观测时间
+3channel_jpg:file_id, file_name, file_path, obsv_start_time,obsv_end_time
+
+表9：35-local-jpg观测文件表（局部－jpeg－每天多张－L分量／T分量）
+文件ID，文件名，文件路径，观测时间
+35_local_jpg:file_id, file_name, file_path, obsv_start_time,obsv_end_time
+
+功能：
+1，基于时间（精确到天）＋望远镜的查询，展示，下载（面向fits表）
+输入时间＋望远镜，显示数据，提供下载	60cm Solar 3Channel Telescope 	3channel_mag_jpg  	  	2010-09-01 11:17:50
+	编辑 	删除 	7 	10cm Full Disk Vector Magnetograph   From Huairou So... 	24324 	fit 	10cm Full Disk Vector Magnetograph
+
+基于事件（region number）的查询，展示，下载（面向事件字典表）
+点事件类型－》列出事件
+
+2，活动区号的可视化（面向jepg）
+输入时间／望远镜类型，使用IDL输出图片（图片包含活动区号位置）
+
+3，基于日历的观测与否检测（面向fits数据表，按照自然天）
+先下拉选择一个望远镜类型，选一个年份，列入12月的表格，点击月，显示该月的每一天的是否进行观测，观测＝太阳，不观测＝xx。
+
+4，实时太阳情况监控（按照自然天）
+显示最新jpeg图片（一个全局，两个局部，同时显示三张图片到一个网页下，表现为自动旋转）

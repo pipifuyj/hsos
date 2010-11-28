@@ -1,0 +1,10 @@
+<?php
+class defaultController extends Controller{
+	public function Index(){
+		echo "this is a Index for defaultController";
+	}
+	public function Test(){
+		echo "this is a test for default.php";
+	}
+}
+?>

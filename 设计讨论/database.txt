@@ -1,0 +1,23 @@
+1. h-alpha
+path/name  datetime
+
+2.3channel-mag
+path/name datetime
+
+3. full-mag
+path/name datetime
+
+4. 35-local
+path/name datetime
+
+5.hsos-region-number
+id lat lon datetime
+
+6. h-alpha-jpg
+path/name date
+
+7. 3channel-jpg
+path/name date
+
+8. 35-local-jpg
+path/name date

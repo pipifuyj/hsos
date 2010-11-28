@@ -1,0 +1,21 @@
+<?php
+class DataController extends Controller{
+	public function Index(){
+		$start=0;$limit=6;$sort="id";$dir="ASC";$dataFilter=array();
+		foreach($_REQUEST as $key=>$value){
+			if($key=="start")$start=$value;
+			if($key=="limit")$limit=$value;
+			if($key=="sort")$sort=$value;
+			if($key=="dir")$dir=$value;
+			if($key=="starttime") $dataFilter[]=array("starttime",">=",$value);//$value+"00:00:00"
+			if($key=="endtime") $dataFilter[]=array("endtime","<=",$value);//$value+"23:59:59"
+		}
+		$this->dataset=$_REQUEST['dataset'];
+		$Store=$this->framework->getModel($this->dataset)->store();
+		$Store->sortBy($sort,$dir);
+		$this->records=$Store->filter($dataFilter,$start,$limit);
+		$this->lastClause=$this->sql->lastClause;
+		$this->count=$Store->getTotalCount($dataFilter);
+	}
+}
+?>

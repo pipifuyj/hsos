@@ -1,0 +1,9 @@
+pro map
+lon=randomu(-100L,100)*360.0-180.0
+lat=randomu(-200L,100)*180.0-90
+map_set,0,135,/orthographic,/isotropic,/horizon
+map_grid
+oplot,lon,lat,psym=1
+image=tvrd()
+write_image, "a.gif",image,r,g,b
+end

@@ -1,0 +1,6 @@
+<?php
+class MonitorController extends Controller{
+	public function Index(){
+	}
+}
+?>
